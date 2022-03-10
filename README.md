@@ -1,4 +1,4 @@
-# `SC1015 Intro to Data Science And Artificial Intelligence Assignment`
+# `SC1015 Intro to DSAI Assignment AY2021-2022`
 
 ## Tutorial Group
 > SC1, Friday 1330-1530
