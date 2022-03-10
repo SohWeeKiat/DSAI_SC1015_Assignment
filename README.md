@@ -20,6 +20,7 @@
 
 
 ## Scraper Technical details
+Since scraping is mostly an I/O bound task, python will be used for simplicity.
 
 ### GET Anime List
 ```
@@ -70,3 +71,6 @@ UInt,               Anime Stats Popularity:
 UInt,               Anime Stats Members: 
 UInt,               Anime Stats Favorites: 
 ```
+
+## Data Cleaning
+TBA
