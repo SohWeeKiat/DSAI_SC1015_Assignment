@@ -38,7 +38,7 @@ class AnimeDataRow:
 		self.url = url
 		self.scored_by_users = 0
 		self.type = ''
-		self.episodes = 0
+		self.episodes = ''
 		self.status = ''
 		self.aired = ''
 		self.premiered = ''
@@ -56,6 +56,9 @@ class AnimeDataRow:
 
 	def IsSpaceDivTag(tag):
 		return tag.name == 'div' and tag.has_attr('class') and 'spaceit_pad' in tag['class']
+
+	def IsBorderSolid(tag):
+		return tag.name == 'div' and tag.has_attr('class') and 'border_solid' in tag['class']
 
 	def GetTagWithText(s, Text):
 		tag = s.find(lambda tag: AnimeDataRow.IsSpaceDivTag(tag) and Text in tag.text)
@@ -85,15 +88,32 @@ class AnimeDataRow:
 			return 0
 		return int(score_tag.text)
 
+	def QueryEpisodes(self):
+		r = requests.get(self.url + "/episode")
+		soup = BeautifulSoup(r.text, 'html.parser')
+		tag = soup.find(lambda tag: AnimeDataRow.IsBorderSolid(tag))
+		if tag == None:
+			return str(0)
+		EpisodeTag = tag.find(lambda tag: tag.name == 'span' and tag.has_attr('class') and 'di-ib' in tag['class'])
+		print(EpisodeTag.text)
+		if EpisodeTag == None:
+			return str(0)
+		Episode_text = EpisodeTag.text[1:]
+		Episode_text = Episode_text.split('/')[0].replace(',','')
+		return Episode_text
+
 	def QueryInfo(self):
 		r = requests.get(self.url)
 		soup = BeautifulSoup(r.text, 'html.parser')
 
 		self.type = AnimeDataRow.GetTagWithText(soup, 'Type:')
+		episode_text = 'unknown'
 		try:
-			self.episodes = int(AnimeDataRow.GetTagWithText(soup, 'Episodes:'))
+			episode_int = int(AnimeDataRow.GetTagWithText(soup, 'Episodes:'))
+			episode_text = str(episode_int)
 		except ValueError:
-			self.episodes = 0
+			episode_text = self.QueryEpisodes()
+		self.episodes = episode_text
 		self.status = AnimeDataRow.GetTagWithText(soup, 'Status:')
 		self.aired = AnimeDataRow.GetTagWithText(soup, 'Aired:')
 		self.premiered = AnimeDataRow.GetTagWithText(soup, 'Premiered:')

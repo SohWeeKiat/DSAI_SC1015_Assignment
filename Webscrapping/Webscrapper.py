@@ -35,6 +35,6 @@ def QueryAllAnime(index, Upcoming = False):
 		for anime in AnimeList:
 			writer.writerow(anime.GetArray())
 
-for i in range(0,2001,50):
+for i in range(8400,8500,50):
 	QueryAllAnime(i)
 	time.sleep(60)
