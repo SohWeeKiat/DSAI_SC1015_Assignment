@@ -73,4 +73,15 @@ UInt,               Anime Stats Favorites:
 ```
 
 ## Data Cleaning
+- Removed all non-anime types (OVA, MUSIC, MOVIE, SPECIALS) including one episode ONAs (considered MOVIE)
+- Converted all blank categorical data to unknown
+- Converted premier date to premier season (E.g Winter 1987 to Winter)
+- Converted broadcast timings to broadcast date (E.g Friday 18:00 to Friday)
+- Converted duration of episodes to standardised in minutes
+- Converted unknown durations to mean (21 minutes)
+- Converted blank demographics to "All"
+- Converted aired date to year aired (E.g Apr 2012 to 2012)
+- Added main genre from genre (E.g Action, Adventure, Romance to Action)
+
+## Exploratory Analysis
 TBA
