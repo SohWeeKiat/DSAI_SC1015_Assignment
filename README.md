@@ -8,7 +8,6 @@
 - Soh Wee Kiat 
 - Samuel Chua
 
-
 ## Roadmap
 - [x] Data scraping from myanimelist
 - [x] Data cleaning
@@ -17,7 +16,6 @@
 - [ ] Visualisation
 - [ ] Presentation Video
 - [ ] Website
-
 
 ## Scraper Technical details
 Since scraping is mostly an I/O bound task, python will be used for simplicity.
