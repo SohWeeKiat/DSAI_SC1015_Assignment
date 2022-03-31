@@ -10,9 +10,9 @@
 
 
 ## Roadmap
-- [ ] Data scraping from myanimelist
-- [ ] Data cleaning
-- [ ] Exploratory Analysis 
+- [x] Data scraping from myanimelist
+- [x] Data cleaning
+- [x] Exploratory Analysis 
 - [ ] Machine Learning ?????
 - [ ] Visualisation
 - [ ] Presentation Video
