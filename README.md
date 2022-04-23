@@ -4,71 +4,27 @@
 > SC1, Friday 1330-1530
 
 ## Team Members
-- Budi Syahiddin
-- Soh Wee Kiat 
-- Samuel Chua
+- Budi Syahiddin (U2120429A)
+- Soh Wee Kiat (U2121644F)
+- Samuel Chua (U2122421B)
 
 ## Roadmap
 - [x] Data scraping from myanimelist
 - [x] Data cleaning
 - [x] Exploratory Analysis 
-- [ ] Machine Learning ?????
-- [ ] Visualisation
-- [ ] Presentation Video
-- [ ] Website
+- [x] Machine Learning
+- [x] Visualisation
+- [x] Presentation Video
 
-## Scraper Technical details
-Since scraping is mostly an I/O bound task, python will be used for simplicity.
+## How to navigate the files?
+- Exploratory Analysis folder: EDA, data cleaning etc
+- MachineLearning: Linear Regression and Gradient Boosting 
+- WebScraping: Web scraping scripts
+- data: `anime_cleaned.csv`, `anime_full.csv`
 
-### GET Anime List
-```
-URL: https://myanimelist.net/topanime.php?limit={integer}
-Response Type: HTML
-```
-`limit` can be integer value but recommended value is multiples of 50, i.e. `0,50,100` etc
-
-#### CSS Selectors
-```
-String, Anime Title (with URL for anime details): tr.ranking-list:nth-child(idx) > td:nth-child(2) > div:nth-child(2) > div:nth-child(2) > h3:nth-child(1) > a:nth-child(1)
-    idx: int where >= 2
-```
-
-### GET Anime Details
-```
-# Example
-URL: https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood
-Response Type: HTML
-```
-`title` and `id` is not deterministic, so must use the previous URL to get this URL
-
-#### CSS Selectors
-```
-String              Anime Overview Synopsis: 
-String              Anime Overview Background: 
-
-String,             Anime Info Title: .title-name > strong:nth-child(1)
-String,             Anime Info Type: 
-UInt,               Anime Info Episode:
-String,             Anime Info Status: 
-String,             Anime Info Aired: 
-String,             Anime Info Premiered: 
-Datetime,           Anime Info Broadcast: 
-Array<String>,      Anime Info Producers: 
-Array<String>,      Anime Info Licensors: 
-Array<String>,      Anime Info Studio: 
-String,             Anime Info Source: 
-Array<String>,      Anime Info Genres: 
-String,             Anime Info Theme: 
-String,             Anime Info Demographic: 
-UInt,               Anime Info Duration: 
-Enum,               Anime Info Rating: 
-
-Float,              Anime Stats Score: 
-UInt,               Anime Stats Rank: 
-UInt,               Anime Stats Popularity: 
-UInt,               Anime Stats Members: 
-UInt,               Anime Stats Favorites: 
-```
+## Scraper details
+There isn't any publicly available API for myanimelist, so we have to scrape them.
+and since scraping is mostly an I/O bound task, python will be used for simplicity.
 
 ## Data Cleaning
 - Removed all non-anime types (OVA, MUSIC, MOVIE, SPECIALS) including one episode ONAs (considered MOVIE)
@@ -83,3 +39,35 @@ UInt,               Anime Stats Favorites:
 
 ## Exploratory Analysis
 TBA
+
+## Machine Learning
+In this project we have used 2 machine learning algorithms, namely linear regression and gradient boosting.
+Why did we choose these 2 algorithms?
+
+- Linear Regression => Familiarity, since we have used it in our labs
+- Gradient Boosting => Something that is out of the syllabus, and it seems quite simple to create a pipeline together with linear regression
+
+For Gradient boosting, we used [`GradientBoostingRegressor()`](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html) and for [`LinearRegression()`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+
+### Data encoding 
+We have to encode some data for example
+- source
+- main genre
+- demographics
+- etc
+
+Since these data are categorical, we used [`OrdinalEncoder`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html) and [`OneHotEncoder`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
+
+## Results
+> Train Set
+![train](./images/train.png)
+
+
+> Test Set
+![test](./images/test.png)
+
+> Explained Variance and MSE
+![Stats](./images/stats.png)
+
+> Preview of predictions
+![Preview](./images.preview.png)
