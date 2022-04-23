@@ -41,8 +41,8 @@ and since scraping is mostly an I/O bound task, python will be used for simplici
 - Checked number of rows after data cleaning with `data.shape`
     - Number of rows after cleaning is 3958 from 8200
 - Checked number of predictors with `data.info()`
-    - Number of numerical predictors - 5 (scored_by_user, episodes, year aired, duration, popularity)
-    - Number of categorical predictors - 8 (main genre, theme, duration, broadcast, premiered, demographic, source, year aired)
+    - Number of numerical predictors - 5 
+    - Number of categorical predictors - 8 
 - Analysed Numerical Predictors to find relationship with score using boxplot, violinplot, histogram and correlation matrix
     - Best predictor is popularity with correlation of -0.55 with score
     - Worst predictor is epsiode with correlation of 0.02 with score
