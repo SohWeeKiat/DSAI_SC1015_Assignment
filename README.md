@@ -70,4 +70,4 @@ Since these data are categorical, we used [`OrdinalEncoder`](https://scikit-lear
 ![Stats](./images/stats.png)
 
 > Preview of predictions
-![Preview](./images.preview.png)
+![Preview](./images/preview.png)
