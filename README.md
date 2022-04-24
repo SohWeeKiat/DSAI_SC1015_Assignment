@@ -30,8 +30,9 @@ and since scraping is mostly an I/O bound task, python will be used for simplici
 - Each anime is treated as an AnimeDataRow object with their own class data members
 - BeautifulSoup is used for parsing HTML responses 
 - Base url: https://myanimelist.net/topanime.php
-- Parameters used: limit=X where X is the starting index of the ranking list
-- Final URL: https://myanimelist.net/topanime.php?limit=0
+    - Parameters used: limit=X where X is the starting index of the ranking list
+    - Final URL: https://myanimelist.net/topanime.php?limit=0
+- Minor data cleaning done such as removing new lines and trailing spaces 
 
 ## Data Cleaning
 - Removed all non-anime types (OVA, MUSIC, MOVIE, SPECIALS) including one episode ONAs (considered MOVIE)
