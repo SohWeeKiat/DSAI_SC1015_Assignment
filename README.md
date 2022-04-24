@@ -27,6 +27,11 @@
 ## Scraper details
 There isn't any publicly available API for myanimelist, so we have to scrape them.
 and since scraping is mostly an I/O bound task, python will be used for simplicity.
+- Each anime is treated as an AnimeDataRow object with their own class data members
+- BeautifulSoup is used for parsing HTML responses 
+- Base url: https://myanimelist.net/topanime.php
+- Parameters used: limit=X where X is the starting index of the ranking list
+- Final URL: https://myanimelist.net/topanime.php?limit=0
 
 ## Data Cleaning
 - Removed all non-anime types (OVA, MUSIC, MOVIE, SPECIALS) including one episode ONAs (considered MOVIE)
