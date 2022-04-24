@@ -74,7 +74,6 @@ Since these data are categorical, we used [`OrdinalEncoder`](https://scikit-lear
 > Train Set
 ![train](./images/train.png)
 
-
 > Test Set
 ![test](./images/test.png)
 
@@ -83,3 +82,7 @@ Since these data are categorical, we used [`OrdinalEncoder`](https://scikit-lear
 
 > Preview of predictions
 ![Preview](./images/preview.png)
+
+## References
+- [scikit-learn docs](https://scikit-learn.org/stable/getting_started.html)
+- [Guide to Encoding Categorical Features Using Scikit-Learn For Machine Learning](https://towardsdatascience.com/guide-to-encoding-categorical-features-using-scikit-learn-for-machine-learning-5048997a5c79)
