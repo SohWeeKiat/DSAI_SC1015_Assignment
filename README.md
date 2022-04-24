@@ -48,13 +48,19 @@ and since scraping is mostly an I/O bound task, python will be used for simplici
 ## Exploratory Analysis
 - Checked number of rows after data cleaning with `data.shape`
     - Number of rows after cleaning is 3958 from 8200
+    - ![shape](./images/1015_1.PNG)
 - Checked number of predictors with `data.info()`
     - Number of numerical predictors - 5 
     - Number of categorical predictors - 8 
+    - ![info](./images/1015_2.PNG)
 - Analysed Numerical Predictors to find relationship with score using boxplot, violinplot, histogram and correlation matrix
+    - ![graph](./images/1015_3.PNG)
+    - ![corr](./images/1015_4.PNG)
     - Best predictor is popularity with correlation of -0.55 with score
     - Worst predictor is epsiode with correlation of 0.02 with score
 - Analysed Categorical Predictors with bivariate visualisation using boxplot and strip plot
+    - ![plot](./images/1015_5.PNG)
+    - ![plot2](./images/1015_6.PNG)
     - Most predictor have slight positive relationship with score or neutral relationship
     - Most predictors have very imbalanced count of datas with a few values having a lot more count than the rest
 
