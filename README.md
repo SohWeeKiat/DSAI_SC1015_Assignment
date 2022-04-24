@@ -4,9 +4,11 @@
 > SC1, Friday 1330-1530
 
 ## Team Members
-- Budi Syahiddin (U2120429A)
-- Soh Wee Kiat (U2121644F)
-- Samuel Chua (U2122421B)
+| Name           | Matric #  |                                  Participation |
+| :------------- | :-------: | ---------------------------------------------: |
+| Soh Wee Kiat   | U2121644F | Web Scraping, Presentation, Video Edit, README |
+| Samuel Chua    | U2122421B |      EDA + Data Cleaning, Presentation, README |
+| Budi Syahiddin | U2120429A |         Machine Learning, Presentation, README |
 
 ## Roadmap
 - [x] Data scraping from myanimelist
